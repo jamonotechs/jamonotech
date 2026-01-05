@@ -1,0 +1,483 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* RESET DE BASE */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f7;
+}
+
+/* ===================== */
+/* HEADER (rectangle du haut) */
+/* Couleur : #0A1F44 avec léger dégradé */
+/* ===================== */
+/* ===================== */
+/* HEADER STICKY */
+/* ===================== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(to right, #0A1F44, #64B5F6);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo-text h1 {
+    font-size: 18px;
+    color: white;
+    margin: 0;
+}
+
+.logo-text p {
+    font-size: 12px;
+    color: #dbe9ff;
+    margin: 0;
+}
+
+.menu-toggle {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #0A1F44;
+    font-weight: bold;
+}
+
+.mobile-menu a:hover {
+    background-color: #64B5F6;
+    color: white;
+}
+
+
+.header-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 50px;
+}
+
+ 
+/* ===================== */
+/* PRODUITS */
+/* ===================== */
+.products {
+    padding: 40px 20px;
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0A1F44;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+.product-card h3 {
+    margin-top: 15px;
+    color: #0A1F44;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* ===================== */
+/* BOUTON WHATSAPP */
+/* ===================== */
+.btn-whatsapp {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: #25d366;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-whatsapp i {
+    margin-right: 8px;
+}
+
+/* ===================== */
+/* FOOTER */
+/* ===================== */
+footer {
+    background-color: #0A1F44;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+/* ===================== */
+/* WHATSAPP FLOTTANT */
+/* ===================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    z-index: 999;
+}
+/* ===================== */
+/* MENU NAVIGATION */
+/* ===================== */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-zone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+/* ===================== */
+/* TEXTE ANIMÉ GAUCHE → DROITE */
+/* ===================== */
+.slide-text {
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: slideLeftRight 8s linear infinite;
+}
+
+@keyframes slideLeftRight {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+/* ===================== */
+/* VERSION MOBILE */
+/* ===================== */
+@media (max-width: 768px) {
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+
+    .slide-text {
+        font-size: 20px;
+    }
+}
+/* ===================== */
+/* PRIX & PROMO */
+/* ===================== */
+.price {
+    margin: 12px 0;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.new-price {
+    color: #e53935;
+    font-size: 18px;
+    font-weight: bold;
+}
+/* ===================== */
+/* BADGE PROMO */
+/* ===================== */
+.product-card {
+    position: relative;
+}
+
+.badge-promo {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #e53935;
+    color: white;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+/* ===================== */
+/* ANIMATION BADGE PROMO */
+/* ===================== */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.badge-promo {
+    animation: pulse 1.5s infinite;
+}
+/* ===================== */
+/* BOUTON ACHETER */
+/* ===================== */
+.btn-buy {
+    display: block;
+    margin-top: 10px;
+    background-color: #0A1F44;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-buy:hover {
+    background-color: #64B5F6;
+    color: #0A1F44;
+}
+/* ===================== */
+/* AVIS CLIENTS */
+/* ===================== */
+.reviews {
+    background-color: #f5f7fa;
+    padding: 40px;
+    text-align: center;
+}
+
+.reviews h2 {
+    color: #0A1F44;
+    margin-bottom: 25px;
+}
+
+.review-card {
+    background: white;
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+/* ===================== */
+/* TITRE NOS PRODUITS */
+/* ===================== */
+.title-products {
+    display: inline-block;
+    background-color: #64B5F6;
+    color: #0A1F44;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 20px auto;
+}
+.title-products {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+}
+/* ===================== */
+/* FLÈCHE GLISSER */
+/* ===================== */
+.scroll-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 2px;      /* proche du titre */
+    margin-bottom: 25px; /* loin du 1er produit */
+}
+
+
+.scroll-indicator span {
+    width: 18px;
+    height: 18px;
+    border-right: 3px solid #64B5F6;
+    border-bottom: 3px solid #64B5F6;
+    transform: rotate(45deg);
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(6px) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.6;
+    }
+}
+/* ===================== */
+/* ANIMATION AU SCROLL */
+/* ===================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ===================== */
+/* EFFET AU SURVOL PRODUIT */
+/* ===================== */
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.product-card img {
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+/* ===================== */
+/* EFFET AU SURVOL BOUTONS */
+/* ===================== */
+
+/* Bouton WhatsApp */
+.btn-whatsapp {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    background-color: #1ebe5d; /* vert WhatsApp un peu plus foncé */
+}
+
+/* Bouton Acheter */
+.btn-buy {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.btn-buy:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    background-color: #64B5F6;
+    color: #0A1F44;
+}
+/* ===================== */
+/* EFFET CLIC (REBOND) */
+/* ===================== */
+.btn-whatsapp:active,
+.btn-buy:active {
+    transform: scale(0.95);
+}
+/* ===================== */
+/* VIBRATION WHATSAPP */
+/* ===================== */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+}
+
+.btn-whatsapp:hover {
+    animation: shake 0.4s ease-in-out;
+}
+ * {
+    box-sizing: border-box;
+}
+.header,
+.product-card,
+img {
+    max-width: 100%;
+}
