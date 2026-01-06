@@ -15,6 +15,7 @@
 <meta name="keywords" content="JamonoTech, matériel électronique Sénégal, caméra surveillance Dakar, clé USB, ring light, micro cravate, trépied">
 
 <meta name="author" content="JamonoTech">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
 </head>
 
@@ -43,6 +44,34 @@
         <a href="tel:+221763883938">Contact</a>
     </nav>
 </header>
+<section class="welcome">
+    <h2 class="welcome-title">Bienvenue chez <span>JamonoTech</span></h2>
+
+    <p class="welcome-text">
+        Ici nous vendons des matériels</p>
+         électroniques de qualité
+    </p>
+
+</section>
+
+<<section class="search-section">
+    <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+
+        <input 
+            type="text"
+            id="searchInput"
+            class="search-input"
+            placeholder="Rechercher ici un produit..."
+            onkeyup="searchProduct()"
+        >
+
+        <button class="search-btn">Rechercher</button>
+    </div>
+</section>
+<p id="noResult" class="no-result">
+    Aucun produit trouvé
+</p>
 
 
  
@@ -315,8 +344,29 @@ const appearOnScroll = new IntersectionObserver(
 
 faders.forEach(fader => {
     appearOnScroll.observe(fader);
-});
+});</script>
+<script>
+function searchProduct() {
+    let input = document.getElementById("searchInput").value.toLowerCase();
+    let products = document.querySelectorAll(".product-card");
+    let noResult = document.getElementById("noResult");
+
+    let found = false;
+
+    products.forEach(product => {
+        let name = product.querySelector("h3").textContent.toLowerCase();
+
+        if (name.includes(input)) {
+            product.style.display = "block";
+            found = true;
+        } else {
+            product.style.display = "none";
+        }
+    });
+
+    noResult.style.display = found ? "none" : "block";
+}
 </script>
 
 </body>
-</html>
+ </html>
